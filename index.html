@@ -6,7 +6,8 @@
 <meta name="theme-color" content="#ffd200">
 <title>Sporting La Caleta</title>
 <meta name="description" content="Calendario, resultados y clasificación del Sporting La Caleta en la Liga de Fútbol Sala Ciudad de Tomares, 3ª División 2026/27.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120'%3E%3Cpath d='M50 4 L94 18 V58 C94 88 72 106 50 116 C28 106 6 88 6 58 V18 Z' fill='%230c0c09'/%3E%3Cpath d='M50 14 L84 25 V58 C84 81 67 96 50 104 C33 96 16 81 16 58 V25 Z' fill='%23ffd200'/%3E%3Cpath d='M16 46 H84 V62 H16 Z' fill='%230c0c09'/%3E%3C/svg%3E">
+<link rel="icon" type="image/png" href="img/escudo-64.png">
+<link rel="apple-touch-icon" href="img/escudo-180.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Barlow:wght@400;500;600;700&display=swap">
 <style>
@@ -32,7 +33,10 @@ body{margin:0;background:var(--ink);color:var(--text);font-family:var(--f-body);
 .hero::after{content:"";position:absolute;inset:auto 0 0 0;height:10px;
   background:repeating-linear-gradient(-45deg,var(--ink) 0 12px,var(--yellow) 12px 24px)}
 .hero .wrap{display:flex;gap:20px;align-items:center;padding-block:28px 38px}
-.crest{width:84px;flex:none}
+.crest{width:112px;height:112px;flex:none;border-radius:50%;background:var(--ink);display:grid;place-items:center;box-shadow:0 0 0 4px var(--ink),0 0 0 6px var(--yellow)}
+.crest img{height:88px;width:auto}
+.mini{height:1.15em;width:auto;vertical-align:-.2em;margin-right:6px}
+.big-crest{height:64px;width:auto;display:block;margin:0 auto 8px}
 .hero h1{font-family:var(--f-display);font-weight:900;font-size:clamp(40px,8vw,72px);line-height:.88;margin:0;letter-spacing:.5px;text-transform:uppercase;text-wrap:balance}
 .hero p{margin:8px 0 0;font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
 
@@ -114,7 +118,9 @@ input,select{font:inherit;background:var(--panel2);color:var(--text);border:1px 
 .note{color:var(--muted);font-size:13px;max-width:65ch}
 @media (max-width:520px){
   .mrow{grid-template-columns:64px 1fr 52px 1fr;gap:6px;font-size:13px}
-  .crest{width:60px}
+  .crest{width:76px;height:76px}
+  .crest img{height:60px}
+  .big-crest{height:48px}
 }
 /* Month view */
 .seg{display:flex;border:1px solid var(--yellow);border-radius:3px;overflow:hidden}
@@ -167,14 +173,7 @@ input,select{font:inherit;background:var(--panel2);color:var(--text);border:1px 
 
 <header class="hero">
   <div class="wrap">
-    <svg class="crest" viewBox="0 0 100 120" aria-hidden="true">
-      <path d="M50 4 L94 18 V58 C94 88 72 106 50 116 C28 106 6 88 6 58 V18 Z" fill="#0c0c09"/>
-      <path d="M50 14 L84 25 V58 C84 81 67 96 50 104 C33 96 16 81 16 58 V25 Z" fill="#ffd200"/>
-      <path d="M16 46 H84 V62 H16 Z" fill="#0c0c09"/>
-      <text x="50" y="58.5" text-anchor="middle" font-family="Big Shoulders Display,Impact,sans-serif" font-weight="900" font-size="15" fill="#ffd200" letter-spacing="1">SLC</text>
-      <circle cx="50" cy="82" r="9" fill="none" stroke="#0c0c09" stroke-width="3"/>
-      <path d="M50 73 L50 91 M41 82 H59" stroke="#0c0c09" stroke-width="2"/>
-    </svg>
+    <div class="crest"><img src="img/escudo.png" alt="Escudo del Sporting de La Caleta" width="396" height="501"></div>
     <div>
       <h1>Sporting<br>La Caleta</h1>
       <p>Liga Fútbol Sala Ciudad de Tomares · 3ª División · 2026/27</p>
@@ -193,6 +192,7 @@ input,select{font:inherit;background:var(--panel2);color:var(--text);border:1px 
 
 <script>
 const US="SLC",REPO="sportinglacaleta/sportinglacaleta.github.io",DPATH="data/partidos.json",API="https://api.github.com/repos/"+REPO;
+const CREST_MINI='<img class="mini" src="img/escudo-64.png" alt="">',CREST_BIG='<img class="big-crest" src="img/escudo.png" alt="">';
 let DATA=null,T={},STARTS=[],BREAK_R=[],MATCHES=[];
 function setData(d){DATA=d;T=d.equipos;STARTS=d.jornadas.map(x=>x.inicio);BREAK_R=d.descansos;MATCHES=d.partidos}
 const addDays=(iso,d)=>{const[y,m,dd]=iso.split("-").map(Number);return new Date(Date.UTC(y,m-1,dd+d)).toISOString().slice(0,10)};
@@ -229,8 +229,8 @@ function row(m){
   const sc=m.post?`<div class="score pend"><span class="tag">Aplaz.</span></div>`:played(m)?`<div class="score">${m.hg}–${m.ag}</div>`:`<div class="score pend">${m.time}</div>`;
   return `<div class="mrow${ours?" ours":""}">
     <div class="when"><b>${fmt(m.date)}</b>${m.time} h</div>
-    <div class="h${m.h===US?" ours-name":""}">${esc(T[m.h])}</div>${sc}
-    <div class="a${m.a===US?" ours-name":""}">${esc(T[m.a])}</div></div>`;
+    <div class="h${m.h===US?" ours-name":""}">${m.h===US?CREST_MINI:""}${esc(T[m.h])}</div>${sc}
+    <div class="a${m.a===US?" ours-name":""}">${m.a===US?CREST_MINI:""}${esc(T[m.a])}</div></div>`;
 }
 function table(){
   const S={};Object.keys(T).forEach(k=>S[k]={k,pj:0,g:0,e:0,p:0,gf:0,gc:0,pts:0,form:[]});
@@ -245,7 +245,7 @@ function table(){
 }
 function tableHTML(rows,compact){
   return `<div class="tscroll"><table><thead><tr><th>#</th><th class="l">Equipo</th><th>PJ</th>${compact?"":"<th>G</th><th>E</th><th>P</th><th>GF</th><th>GC</th>"}<th>DG</th><th>Pts</th>${compact?"":"<th>Últimos 5</th>"}</tr></thead><tbody>${
-  rows.map((r,i)=>`<tr class="${r.k===US?"ours":""}"><td class="pos">${i+1}</td><td class="l">${esc(T[r.k])}</td><td>${r.pj}</td>${compact?"":`<td>${r.g}</td><td>${r.e}</td><td>${r.p}</td><td>${r.gf}</td><td>${r.gc}</td>`}<td>${r.gf-r.gc>0?"+":""}${r.gf-r.gc}</td><td class="pts">${r.pts}</td>${compact?"":`<td><div class="form">${r.form.slice(-5).map(f=>`<i class="${f}">${{W:"G",D:"E",L:"P"}[f]}</i>`).join("")||'<span class="label">—</span>'}</div></td>`}</tr>`).join("")}</tbody></table></div>`;
+  rows.map((r,i)=>`<tr class="${r.k===US?"ours":""}"><td class="pos">${i+1}</td><td class="l">${r.k===US?CREST_MINI:""}${esc(T[r.k])}</td><td>${r.pj}</td>${compact?"":`<td>${r.g}</td><td>${r.e}</td><td>${r.p}</td><td>${r.gf}</td><td>${r.gc}</td>`}<td>${r.gf-r.gc>0?"+":""}${r.gf-r.gc}</td><td class="pts">${r.pts}</td>${compact?"":`<td><div class="form">${r.form.slice(-5).map(f=>`<i class="${f}">${{W:"G",D:"E",L:"P"}[f]}</i>`).join("")||'<span class="label">—</span>'}</div></td>`}</tr>`).join("")}</tbody></table></div>`;
 }
 
 function renderInicio(){
@@ -257,7 +257,7 @@ function renderInicio(){
   if(next){
     const days=Math.round((new Date(next.date+"T12:00:00")-new Date(t+"T12:00:00"))/864e5);
     nx=`<section class="next"><div class="label" style="text-align:center">Próximo partido · Jornada ${next.j}</div>
-      <div class="teams"><div class="tname${next.h===US?" ours-name":""}">${esc(T[next.h])}</div><div class="vs">VS</div><div class="tname${next.a===US?" ours-name":""}">${esc(T[next.a])}</div></div>
+      <div class="teams"><div class="tname${next.h===US?" ours-name":""}">${next.h===US?CREST_BIG:""}${esc(T[next.h])}</div><div class="vs">VS</div><div class="tname${next.a===US?" ours-name":""}">${next.a===US?CREST_BIG:""}${esc(T[next.a])}</div></div>
       <div class="meta"><span>${fmt(next.date,{weekday:"long",day:"numeric",month:"long"})}</span><span>${next.time} h</span><span>${next.h===US?"Local":"Visitante"}</span></div>
       <div><div class="count">${days<=0?"HOY":days}</div><div class="label" style="text-align:center">${days<=0?"":days===1?"día":"días"}</div></div></section>`;
   }
