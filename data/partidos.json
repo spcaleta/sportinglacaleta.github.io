@@ -1,0 +1,1604 @@
+{
+ "temporada": "2026/27",
+ "competicion": "Liga Fútbol Sala Ciudad de Tomares · 3ª División",
+ "equipos": {
+  "CRA": "Cracks del Minutti 2006",
+  "QUI": "Quinta Fase",
+  "ROY": "Royal Academy FS",
+  "MAS": "Mashuca CF",
+  "SIT": "CD Sitivo",
+  "HAR": "UD Harta Fe",
+  "GAL": "Barrio Galaxy FS",
+  "NAS": "La Nasa",
+  "SLC": "Sporting La Caleta",
+  "VIV": "Vividores FC",
+  "BOM": "La Bomba del Carmen",
+  "DIS": "Club Disney FS Cirineo Abogados"
+ },
+ "jornadas": [
+  {
+   "j": 1,
+   "inicio": "2026-10-19"
+  },
+  {
+   "j": 2,
+   "inicio": "2026-10-26"
+  },
+  {
+   "j": 3,
+   "inicio": "2026-11-09"
+  },
+  {
+   "j": 4,
+   "inicio": "2026-11-16"
+  },
+  {
+   "j": 5,
+   "inicio": "2026-11-23"
+  },
+  {
+   "j": 6,
+   "inicio": "2026-11-30"
+  },
+  {
+   "j": 7,
+   "inicio": "2026-12-14"
+  },
+  {
+   "j": 8,
+   "inicio": "2027-01-11"
+  },
+  {
+   "j": 9,
+   "inicio": "2027-01-18"
+  },
+  {
+   "j": 10,
+   "inicio": "2027-01-25"
+  },
+  {
+   "j": 11,
+   "inicio": "2027-02-01"
+  },
+  {
+   "j": 12,
+   "inicio": "2027-02-08"
+  },
+  {
+   "j": 13,
+   "inicio": "2027-02-15"
+  },
+  {
+   "j": 14,
+   "inicio": "2027-02-22"
+  },
+  {
+   "j": 15,
+   "inicio": "2027-03-08"
+  },
+  {
+   "j": 16,
+   "inicio": "2027-03-15"
+  },
+  {
+   "j": 17,
+   "inicio": "2027-03-29"
+  },
+  {
+   "j": 18,
+   "inicio": "2027-04-05"
+  },
+  {
+   "j": 19,
+   "inicio": "2027-04-19"
+  },
+  {
+   "j": 20,
+   "inicio": "2027-04-26"
+  },
+  {
+   "j": 21,
+   "inicio": "2027-05-03"
+  },
+  {
+   "j": 22,
+   "inicio": "2027-05-10"
+  }
+ ],
+ "descansos": [
+  {
+   "from": "2026-11-02",
+   "to": "2026-11-06",
+   "t": "Recuperación"
+  },
+  {
+   "from": "2026-12-09",
+   "to": "2026-12-11",
+   "t": "Recuperación"
+  },
+  {
+   "from": "2026-12-18",
+   "to": "2027-01-10",
+   "t": "Navidad"
+  },
+  {
+   "from": "2027-03-02",
+   "to": "2027-03-05",
+   "t": "Recuperación"
+  },
+  {
+   "from": "2027-03-19",
+   "to": "2027-03-28",
+   "t": "Semana Santa"
+  },
+  {
+   "from": "2027-04-09",
+   "to": "2027-04-18",
+   "t": "Feria"
+  },
+  {
+   "from": "2027-05-17",
+   "to": "2027-05-20",
+   "t": "Recuperación"
+  },
+  {
+   "from": "2027-05-24",
+   "to": "2027-05-31",
+   "t": "Promoción"
+  }
+ ],
+ "partidos": [
+  {
+   "id": "j1-0",
+   "j": 1,
+   "date": "2026-10-19",
+   "time": "20:30",
+   "h": "CRA",
+   "a": "QUI",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j1-1",
+   "j": 1,
+   "date": "2026-10-19",
+   "time": "21:30",
+   "h": "ROY",
+   "a": "MAS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j1-2",
+   "j": 1,
+   "date": "2026-10-20",
+   "time": "20:30",
+   "h": "SIT",
+   "a": "HAR",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j1-3",
+   "j": 1,
+   "date": "2026-10-20",
+   "time": "21:30",
+   "h": "GAL",
+   "a": "NAS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j1-4",
+   "j": 1,
+   "date": "2026-10-22",
+   "time": "21:00",
+   "h": "SLC",
+   "a": "VIV",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j1-5",
+   "j": 1,
+   "date": "2026-10-22",
+   "time": "22:00",
+   "h": "BOM",
+   "a": "DIS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j2-0",
+   "j": 2,
+   "date": "2026-10-26",
+   "time": "20:30",
+   "h": "MAS",
+   "a": "BOM",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j2-1",
+   "j": 2,
+   "date": "2026-10-26",
+   "time": "21:30",
+   "h": "VIV",
+   "a": "NAS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j2-2",
+   "j": 2,
+   "date": "2026-10-27",
+   "time": "20:30",
+   "h": "GAL",
+   "a": "CRA",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j2-3",
+   "j": 2,
+   "date": "2026-10-27",
+   "time": "21:30",
+   "h": "HAR",
+   "a": "ROY",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j2-4",
+   "j": 2,
+   "date": "2026-10-29",
+   "time": "21:00",
+   "h": "DIS",
+   "a": "SLC",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j2-5",
+   "j": 2,
+   "date": "2026-10-29",
+   "time": "22:00",
+   "h": "QUI",
+   "a": "SIT",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j3-0",
+   "j": 3,
+   "date": "2026-11-09",
+   "time": "20:30",
+   "h": "CRA",
+   "a": "VIV",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j3-1",
+   "j": 3,
+   "date": "2026-11-09",
+   "time": "21:30",
+   "h": "DIS",
+   "a": "NAS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j3-2",
+   "j": 3,
+   "date": "2026-11-10",
+   "time": "20:30",
+   "h": "BOM",
+   "a": "SLC",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j3-3",
+   "j": 3,
+   "date": "2026-11-10",
+   "time": "21:30",
+   "h": "SIT",
+   "a": "GAL",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j3-4",
+   "j": 3,
+   "date": "2026-11-12",
+   "time": "21:00",
+   "h": "ROY",
+   "a": "QUI",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j3-5",
+   "j": 3,
+   "date": "2026-11-12",
+   "time": "22:00",
+   "h": "MAS",
+   "a": "HAR",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j4-0",
+   "j": 4,
+   "date": "2026-11-16",
+   "time": "20:30",
+   "h": "DIS",
+   "a": "CRA",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j4-1",
+   "j": 4,
+   "date": "2026-11-16",
+   "time": "21:30",
+   "h": "GAL",
+   "a": "ROY",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j4-2",
+   "j": 4,
+   "date": "2026-11-17",
+   "time": "20:30",
+   "h": "SLC",
+   "a": "NAS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j4-3",
+   "j": 4,
+   "date": "2026-11-17",
+   "time": "21:30",
+   "h": "QUI",
+   "a": "MAS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j4-4",
+   "j": 4,
+   "date": "2026-11-19",
+   "time": "21:00",
+   "h": "HAR",
+   "a": "BOM",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j4-5",
+   "j": 4,
+   "date": "2026-11-19",
+   "time": "22:00",
+   "h": "VIV",
+   "a": "SIT",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j5-0",
+   "j": 5,
+   "date": "2026-11-23",
+   "time": "20:30",
+   "h": "SIT",
+   "a": "DIS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j5-1",
+   "j": 5,
+   "date": "2026-11-23",
+   "time": "21:30",
+   "h": "MAS",
+   "a": "GAL",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j5-2",
+   "j": 5,
+   "date": "2026-11-24",
+   "time": "20:30",
+   "h": "HAR",
+   "a": "QUI",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j5-3",
+   "j": 5,
+   "date": "2026-11-24",
+   "time": "21:30",
+   "h": "CRA",
+   "a": "SLC",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j5-4",
+   "j": 5,
+   "date": "2026-11-26",
+   "time": "21:00",
+   "h": "BOM",
+   "a": "NAS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j5-5",
+   "j": 5,
+   "date": "2026-11-26",
+   "time": "22:00",
+   "h": "ROY",
+   "a": "VIV",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j6-0",
+   "j": 6,
+   "date": "2026-11-30",
+   "time": "20:30",
+   "h": "SLC",
+   "a": "SIT",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j6-1",
+   "j": 6,
+   "date": "2026-11-30",
+   "time": "21:30",
+   "h": "CRA",
+   "a": "NAS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j6-2",
+   "j": 6,
+   "date": "2026-12-01",
+   "time": "20:30",
+   "h": "ROY",
+   "a": "DIS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j6-3",
+   "j": 6,
+   "date": "2026-12-01",
+   "time": "21:30",
+   "h": "MAS",
+   "a": "VIV",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j6-4",
+   "j": 6,
+   "date": "2026-12-03",
+   "time": "21:00",
+   "h": "QUI",
+   "a": "BOM",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j6-5",
+   "j": 6,
+   "date": "2026-12-03",
+   "time": "22:00",
+   "h": "GAL",
+   "a": "HAR",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j7-0",
+   "j": 7,
+   "date": "2026-12-14",
+   "time": "20:30",
+   "h": "ROY",
+   "a": "SLC",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j7-1",
+   "j": 7,
+   "date": "2026-12-14",
+   "time": "21:30",
+   "h": "MAS",
+   "a": "DIS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j7-2",
+   "j": 7,
+   "date": "2026-12-15",
+   "time": "20:30",
+   "h": "QUI",
+   "a": "GAL",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j7-3",
+   "j": 7,
+   "date": "2026-12-15",
+   "time": "21:30",
+   "h": "HAR",
+   "a": "VIV",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j7-4",
+   "j": 7,
+   "date": "2026-12-17",
+   "time": "21:00",
+   "h": "SIT",
+   "a": "NAS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j7-5",
+   "j": 7,
+   "date": "2026-12-17",
+   "time": "22:00",
+   "h": "BOM",
+   "a": "CRA",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j8-0",
+   "j": 8,
+   "date": "2027-01-11",
+   "time": "20:30",
+   "h": "VIV",
+   "a": "QUI",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j8-1",
+   "j": 8,
+   "date": "2027-01-11",
+   "time": "21:30",
+   "h": "CRA",
+   "a": "SIT",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j8-2",
+   "j": 8,
+   "date": "2027-01-12",
+   "time": "20:30",
+   "h": "DIS",
+   "a": "HAR",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j8-3",
+   "j": 8,
+   "date": "2027-01-12",
+   "time": "21:30",
+   "h": "SLC",
+   "a": "MAS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j8-4",
+   "j": 8,
+   "date": "2027-01-14",
+   "time": "21:00",
+   "h": "ROY",
+   "a": "NAS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j8-5",
+   "j": 8,
+   "date": "2027-01-14",
+   "time": "22:00",
+   "h": "GAL",
+   "a": "BOM",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j9-0",
+   "j": 9,
+   "date": "2027-01-18",
+   "time": "20:30",
+   "h": "MAS",
+   "a": "NAS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j9-1",
+   "j": 9,
+   "date": "2027-01-18",
+   "time": "21:30",
+   "h": "ROY",
+   "a": "CRA",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j9-2",
+   "j": 9,
+   "date": "2027-01-19",
+   "time": "20:30",
+   "h": "GAL",
+   "a": "VIV",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j9-3",
+   "j": 9,
+   "date": "2027-01-19",
+   "time": "21:30",
+   "h": "BOM",
+   "a": "SIT",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j9-4",
+   "j": 9,
+   "date": "2027-01-21",
+   "time": "21:00",
+   "h": "HAR",
+   "a": "SLC",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j9-5",
+   "j": 9,
+   "date": "2027-01-21",
+   "time": "22:00",
+   "h": "DIS",
+   "a": "QUI",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j10-0",
+   "j": 10,
+   "date": "2027-01-25",
+   "time": "20:30",
+   "h": "HAR",
+   "a": "NAS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j10-1",
+   "j": 10,
+   "date": "2027-01-25",
+   "time": "21:30",
+   "h": "SLC",
+   "a": "QUI",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j10-2",
+   "j": 10,
+   "date": "2027-01-26",
+   "time": "20:30",
+   "h": "VIV",
+   "a": "BOM",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j10-3",
+   "j": 10,
+   "date": "2027-01-26",
+   "time": "21:30",
+   "h": "DIS",
+   "a": "GAL",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j10-4",
+   "j": 10,
+   "date": "2027-01-28",
+   "time": "21:00",
+   "h": "ROY",
+   "a": "SIT",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j10-5",
+   "j": 10,
+   "date": "2027-01-28",
+   "time": "22:00",
+   "h": "CRA",
+   "a": "MAS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j11-0",
+   "j": 11,
+   "date": "2027-02-01",
+   "time": "20:30",
+   "h": "VIV",
+   "a": "DIS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j11-1",
+   "j": 11,
+   "date": "2027-02-01",
+   "time": "21:30",
+   "h": "GAL",
+   "a": "SLC",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j11-2",
+   "j": 11,
+   "date": "2027-02-02",
+   "time": "20:30",
+   "h": "MAS",
+   "a": "SIT",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j11-3",
+   "j": 11,
+   "date": "2027-02-02",
+   "time": "21:30",
+   "h": "QUI",
+   "a": "NAS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j11-4",
+   "j": 11,
+   "date": "2027-02-04",
+   "time": "21:00",
+   "h": "HAR",
+   "a": "CRA",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j11-5",
+   "j": 11,
+   "date": "2027-02-04",
+   "time": "22:00",
+   "h": "BOM",
+   "a": "ROY",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j12-0",
+   "j": 12,
+   "date": "2027-02-08",
+   "time": "20:30",
+   "h": "QUI",
+   "a": "CRA",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j12-1",
+   "j": 12,
+   "date": "2027-02-08",
+   "time": "21:30",
+   "h": "MAS",
+   "a": "ROY",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j12-2",
+   "j": 12,
+   "date": "2027-02-09",
+   "time": "20:30",
+   "h": "HAR",
+   "a": "SIT",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j12-3",
+   "j": 12,
+   "date": "2027-02-09",
+   "time": "21:30",
+   "h": "NAS",
+   "a": "GAL",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j12-4",
+   "j": 12,
+   "date": "2027-02-11",
+   "time": "21:00",
+   "h": "VIV",
+   "a": "SLC",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j12-5",
+   "j": 12,
+   "date": "2027-02-11",
+   "time": "22:00",
+   "h": "DIS",
+   "a": "BOM",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j13-0",
+   "j": 13,
+   "date": "2027-02-15",
+   "time": "20:30",
+   "h": "BOM",
+   "a": "MAS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j13-1",
+   "j": 13,
+   "date": "2027-02-15",
+   "time": "21:30",
+   "h": "NAS",
+   "a": "VIV",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j13-2",
+   "j": 13,
+   "date": "2027-02-16",
+   "time": "20:30",
+   "h": "CRA",
+   "a": "GAL",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j13-3",
+   "j": 13,
+   "date": "2027-02-16",
+   "time": "21:30",
+   "h": "ROY",
+   "a": "HAR",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j13-4",
+   "j": 13,
+   "date": "2027-02-18",
+   "time": "21:00",
+   "h": "SLC",
+   "a": "DIS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j13-5",
+   "j": 13,
+   "date": "2027-02-18",
+   "time": "22:00",
+   "h": "SIT",
+   "a": "QUI",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j14-0",
+   "j": 14,
+   "date": "2027-02-22",
+   "time": "20:30",
+   "h": "VIV",
+   "a": "CRA",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j14-1",
+   "j": 14,
+   "date": "2027-02-22",
+   "time": "21:30",
+   "h": "NAS",
+   "a": "DIS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j14-2",
+   "j": 14,
+   "date": "2027-02-23",
+   "time": "20:30",
+   "h": "SLC",
+   "a": "BOM",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j14-3",
+   "j": 14,
+   "date": "2027-02-23",
+   "time": "21:30",
+   "h": "GAL",
+   "a": "SIT",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j14-4",
+   "j": 14,
+   "date": "2027-02-25",
+   "time": "21:00",
+   "h": "QUI",
+   "a": "ROY",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j14-5",
+   "j": 14,
+   "date": "2027-02-25",
+   "time": "22:00",
+   "h": "HAR",
+   "a": "MAS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j15-0",
+   "j": 15,
+   "date": "2027-03-08",
+   "time": "20:30",
+   "h": "CRA",
+   "a": "DIS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j15-1",
+   "j": 15,
+   "date": "2027-03-08",
+   "time": "21:30",
+   "h": "ROY",
+   "a": "GAL",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j15-2",
+   "j": 15,
+   "date": "2027-03-09",
+   "time": "20:30",
+   "h": "NAS",
+   "a": "SLC",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j15-3",
+   "j": 15,
+   "date": "2027-03-09",
+   "time": "21:30",
+   "h": "MAS",
+   "a": "QUI",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j15-4",
+   "j": 15,
+   "date": "2027-03-11",
+   "time": "21:00",
+   "h": "BOM",
+   "a": "HAR",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j15-5",
+   "j": 15,
+   "date": "2027-03-11",
+   "time": "22:00",
+   "h": "SIT",
+   "a": "VIV",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j16-0",
+   "j": 16,
+   "date": "2027-03-15",
+   "time": "20:30",
+   "h": "DIS",
+   "a": "SIT",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j16-1",
+   "j": 16,
+   "date": "2027-03-15",
+   "time": "21:30",
+   "h": "GAL",
+   "a": "MAS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j16-2",
+   "j": 16,
+   "date": "2027-03-16",
+   "time": "20:30",
+   "h": "QUI",
+   "a": "HAR",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j16-3",
+   "j": 16,
+   "date": "2027-03-16",
+   "time": "21:30",
+   "h": "SLC",
+   "a": "CRA",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j16-4",
+   "j": 16,
+   "date": "2027-03-18",
+   "time": "21:00",
+   "h": "NAS",
+   "a": "BOM",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j16-5",
+   "j": 16,
+   "date": "2027-03-18",
+   "time": "22:00",
+   "h": "VIV",
+   "a": "ROY",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j17-0",
+   "j": 17,
+   "date": "2027-03-29",
+   "time": "20:30",
+   "h": "SIT",
+   "a": "SLC",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j17-1",
+   "j": 17,
+   "date": "2027-03-29",
+   "time": "21:30",
+   "h": "NAS",
+   "a": "CRA",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j17-2",
+   "j": 17,
+   "date": "2027-03-30",
+   "time": "20:30",
+   "h": "DIS",
+   "a": "ROY",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j17-3",
+   "j": 17,
+   "date": "2027-03-30",
+   "time": "21:30",
+   "h": "VIV",
+   "a": "MAS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j17-4",
+   "j": 17,
+   "date": "2027-04-01",
+   "time": "21:00",
+   "h": "BOM",
+   "a": "QUI",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j17-5",
+   "j": 17,
+   "date": "2027-04-01",
+   "time": "22:00",
+   "h": "HAR",
+   "a": "GAL",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j18-0",
+   "j": 18,
+   "date": "2027-04-05",
+   "time": "20:30",
+   "h": "SLC",
+   "a": "ROY",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j18-1",
+   "j": 18,
+   "date": "2027-04-05",
+   "time": "21:30",
+   "h": "DIS",
+   "a": "MAS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j18-2",
+   "j": 18,
+   "date": "2027-04-06",
+   "time": "20:30",
+   "h": "GAL",
+   "a": "QUI",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j18-3",
+   "j": 18,
+   "date": "2027-04-06",
+   "time": "21:30",
+   "h": "VIV",
+   "a": "HAR",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j18-4",
+   "j": 18,
+   "date": "2027-04-08",
+   "time": "21:00",
+   "h": "NAS",
+   "a": "SIT",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j18-5",
+   "j": 18,
+   "date": "2027-04-08",
+   "time": "22:00",
+   "h": "CRA",
+   "a": "BOM",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j19-0",
+   "j": 19,
+   "date": "2027-04-19",
+   "time": "20:30",
+   "h": "QUI",
+   "a": "VIV",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j19-1",
+   "j": 19,
+   "date": "2027-04-19",
+   "time": "21:30",
+   "h": "SIT",
+   "a": "CRA",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j19-2",
+   "j": 19,
+   "date": "2027-04-20",
+   "time": "20:30",
+   "h": "HAR",
+   "a": "DIS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j19-3",
+   "j": 19,
+   "date": "2027-04-20",
+   "time": "21:30",
+   "h": "MAS",
+   "a": "SLC",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j19-4",
+   "j": 19,
+   "date": "2027-04-22",
+   "time": "21:00",
+   "h": "NAS",
+   "a": "ROY",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j19-5",
+   "j": 19,
+   "date": "2027-04-22",
+   "time": "22:00",
+   "h": "BOM",
+   "a": "GAL",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j20-0",
+   "j": 20,
+   "date": "2027-04-26",
+   "time": "20:30",
+   "h": "NAS",
+   "a": "MAS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j20-1",
+   "j": 20,
+   "date": "2027-04-26",
+   "time": "21:30",
+   "h": "CRA",
+   "a": "ROY",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j20-2",
+   "j": 20,
+   "date": "2027-04-27",
+   "time": "20:30",
+   "h": "VIV",
+   "a": "GAL",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j20-3",
+   "j": 20,
+   "date": "2027-04-27",
+   "time": "21:30",
+   "h": "SIT",
+   "a": "BOM",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j20-4",
+   "j": 20,
+   "date": "2027-04-29",
+   "time": "21:00",
+   "h": "SLC",
+   "a": "HAR",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j20-5",
+   "j": 20,
+   "date": "2027-04-29",
+   "time": "22:00",
+   "h": "QUI",
+   "a": "DIS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j21-0",
+   "j": 21,
+   "date": "2027-05-03",
+   "time": "20:30",
+   "h": "NAS",
+   "a": "HAR",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j21-1",
+   "j": 21,
+   "date": "2027-05-03",
+   "time": "21:30",
+   "h": "QUI",
+   "a": "SLC",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j21-2",
+   "j": 21,
+   "date": "2027-05-04",
+   "time": "20:30",
+   "h": "BOM",
+   "a": "VIV",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j21-3",
+   "j": 21,
+   "date": "2027-05-04",
+   "time": "21:30",
+   "h": "GAL",
+   "a": "DIS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j21-4",
+   "j": 21,
+   "date": "2027-05-06",
+   "time": "21:00",
+   "h": "SIT",
+   "a": "ROY",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j21-5",
+   "j": 21,
+   "date": "2027-05-06",
+   "time": "22:00",
+   "h": "MAS",
+   "a": "CRA",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j22-0",
+   "j": 22,
+   "date": "2027-05-10",
+   "time": "20:30",
+   "h": "DIS",
+   "a": "VIV",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j22-1",
+   "j": 22,
+   "date": "2027-05-10",
+   "time": "21:30",
+   "h": "SLC",
+   "a": "GAL",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j22-2",
+   "j": 22,
+   "date": "2027-05-11",
+   "time": "20:30",
+   "h": "SIT",
+   "a": "MAS",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j22-3",
+   "j": 22,
+   "date": "2027-05-11",
+   "time": "21:30",
+   "h": "NAS",
+   "a": "QUI",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j22-4",
+   "j": 22,
+   "date": "2027-05-13",
+   "time": "21:00",
+   "h": "CRA",
+   "a": "HAR",
+   "hg": null,
+   "ag": null,
+   "post": false
+  },
+  {
+   "id": "j22-5",
+   "j": 22,
+   "date": "2027-05-13",
+   "time": "22:00",
+   "h": "ROY",
+   "a": "BOM",
+   "hg": null,
+   "ag": null,
+   "post": false
+  }
+ ]
+}

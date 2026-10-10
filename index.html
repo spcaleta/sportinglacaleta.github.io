@@ -1,0 +1,417 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#ffd200">
+<title>Sporting La Caleta</title>
+<meta name="description" content="Calendario, resultados y clasificación del Sporting La Caleta en la Liga de Fútbol Sala Ciudad de Tomares, 3ª División 2026/27.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 120'%3E%3Cpath d='M50 4 L94 18 V58 C94 88 72 106 50 116 C28 106 6 88 6 58 V18 Z' fill='%230c0c09'/%3E%3Cpath d='M50 14 L84 25 V58 C84 81 67 96 50 104 C33 96 16 81 16 58 V25 Z' fill='%23ffd200'/%3E%3Cpath d='M16 46 H84 V62 H16 Z' fill='%230c0c09'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;800;900&family=Barlow:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: marcador de pabellón — bloque amarillo de club arriba, pestañas, filas de partido tipo acta */
+:root{
+  --ink:#0c0c09; --panel:#16150f; --panel2:#1e1c13; --line:#2e2b1b;
+  --yellow:#ffd200; --yellow-dim:#b89a12; --text:#f4f0e0; --muted:#a39e85;
+  --win:#5fd38d; --loss:#ff6f5e; --draw:#cfc8a6;
+  --f-display:"Big Shoulders Display","Arial Narrow",Impact,sans-serif;
+  --f-body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+body{margin:0;background:var(--ink);color:var(--text);font-family:var(--f-body);font-size:15px;line-height:1.45}
+.wrap{max-width:980px;margin:0 auto;padding-inline:16px}
+.demo{background:var(--panel2);color:var(--muted);font-size:13px;text-align:center;padding:8px 16px;border-bottom:1px solid var(--line)}
+.demo b{color:var(--yellow)}
+
+/* Hero */
+.hero{background:var(--yellow);color:var(--ink);position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;inset:auto 0 0 0;height:10px;
+  background:repeating-linear-gradient(-45deg,var(--ink) 0 12px,var(--yellow) 12px 24px)}
+.hero .wrap{display:flex;gap:20px;align-items:center;padding-block:28px 38px}
+.crest{width:84px;flex:none}
+.hero h1{font-family:var(--f-display);font-weight:900;font-size:clamp(40px,8vw,72px);line-height:.88;margin:0;letter-spacing:.5px;text-transform:uppercase;text-wrap:balance}
+.hero p{margin:8px 0 0;font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+
+/* Tabs */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--ink);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;gap:4px;overflow-x:auto}
+nav button{font:700 15px/1 var(--f-display);letter-spacing:.08em;text-transform:uppercase;background:none;border:0;color:var(--muted);padding:16px 14px;cursor:pointer;border-bottom:3px solid transparent;white-space:nowrap}
+nav button[aria-selected="true"]{color:var(--yellow);border-color:var(--yellow)}
+nav button:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--yellow);outline-offset:2px}
+nav .lock{margin-left:auto}
+
+main{padding-block:24px 60px}
+h2{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:28px;letter-spacing:.03em;margin:0 0 14px}
+h3{font-family:var(--f-display);font-weight:800;text-transform:uppercase;font-size:20px;letter-spacing:.04em;margin:0}
+.label{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);font-weight:600}
+
+/* Next match */
+.next{border:2px solid var(--yellow);border-radius:4px;padding:20px;display:grid;gap:16px}
+.next .teams{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:12px;text-align:center}
+.next .tname{font-family:var(--f-display);font-weight:800;font-size:clamp(20px,4vw,30px);text-transform:uppercase;line-height:1}
+.next .vs{font-family:var(--f-display);font-weight:900;font-size:22px;color:var(--yellow)}
+.next .meta{display:flex;flex-wrap:wrap;gap:8px 22px;justify-content:center;font-weight:600}
+.count{font-family:var(--f-display);font-weight:900;color:var(--yellow);font-size:44px;line-height:1;text-align:center}
+.grid2{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:24px;margin-top:28px}
+.box{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:16px;min-width:0}
+
+/* Match rows */
+.mrow{display:grid;grid-template-columns:86px 1fr 64px 1fr;gap:10px;align-items:center;padding:10px 4px;border-top:1px solid var(--line);font-size:14px}
+.mrow:first-child{border-top:0}
+.mrow .when{color:var(--muted);font-size:12px;line-height:1.25;font-variant-numeric:tabular-nums}
+.mrow .when b{color:var(--text);font-weight:600;display:block}
+.mrow .h{text-align:right}
+.mrow .h,.mrow .a{min-width:0;overflow-wrap:anywhere;font-weight:500}
+.score{font-family:var(--f-display);font-weight:800;font-size:20px;text-align:center;background:var(--panel2);border-radius:3px;padding:3px 0;font-variant-numeric:tabular-nums}
+.score.pend{color:var(--muted);font-size:14px;font-family:var(--f-body);font-weight:600}
+.mrow.ours{background:rgba(255,210,0,.07);box-shadow:inset 3px 0 0 var(--yellow)}
+.ours-name{color:var(--yellow);font-weight:700!important}
+.tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:2px 6px;border-radius:2px;background:var(--loss);color:var(--ink)}
+
+.jhead{display:flex;justify-content:space-between;align-items:baseline;gap:10px;flex-wrap:wrap;margin-bottom:6px}
+.jcard{background:var(--panel);border:1px solid var(--line);border-radius:4px;padding:14px 14px 6px;margin-bottom:14px}
+.jcard.done .jhead h3::after{content:" ✓";color:var(--win)}
+.brk{display:flex;gap:10px;align-items:center;margin:4px 0 18px;color:var(--muted);font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:.06em}
+.brk::before,.brk::after{content:"";flex:1;height:1px;background:repeating-linear-gradient(90deg,var(--yellow-dim) 0 6px,transparent 6px 12px)}
+.toolbar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin-bottom:18px}
+.chk{display:flex;align-items:center;gap:8px;font-weight:600;cursor:pointer}
+.chk input{accent-color:var(--yellow);width:18px;height:18px}
+
+/* Table */
+.tscroll{overflow-x:auto}
+table{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums;min-width:560px}
+th{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:600;text-align:center;padding:8px 6px;border-bottom:1px solid var(--line)}
+th.l,td.l{text-align:left}
+td{text-align:center;padding:10px 6px;border-bottom:1px solid var(--line)}
+td.pts{font-family:var(--f-display);font-weight:800;font-size:20px;color:var(--yellow)}
+td.pos{font-family:var(--f-display);font-weight:800;font-size:18px;width:36px}
+tr.ours td{background:rgba(255,210,0,.08)}
+tr.ours td.l{color:var(--yellow);font-weight:700}
+.form{display:flex;gap:3px;justify-content:center}
+.form i{width:18px;height:18px;border-radius:2px;font:700 11px/18px var(--f-body);font-style:normal;color:var(--ink)}
+.form .W{background:var(--win)}.form .D{background:var(--draw)}.form .L{background:var(--loss)}
+.legend{color:var(--muted);font-size:13px;margin-top:10px}
+
+/* Forms / admin */
+input,select{font:inherit;background:var(--panel2);color:var(--text);border:1px solid var(--line);border-radius:3px;padding:8px 10px}
+.btn{font:800 15px/1 var(--f-display);letter-spacing:.08em;text-transform:uppercase;background:var(--yellow);color:var(--ink);border:0;border-radius:3px;padding:12px 16px;cursor:pointer}
+.btn.ghost{background:none;color:var(--yellow);border:1px solid var(--yellow)}
+.btn.danger{background:none;color:var(--loss);border:1px solid var(--loss)}
+.login{max-width:380px;display:grid;gap:12px}
+.login .err{color:var(--loss);font-size:14px}
+.arow{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:10px;padding:12px 0;border-top:1px solid var(--line);align-items:center}
+.arow .teams{font-weight:600;min-width:0;overflow-wrap:anywhere}
+.arow .fields{display:flex;gap:6px;flex-wrap:wrap;align-items:center;justify-content:flex-end}
+.arow input[type=number]{width:58px;text-align:center;font-family:var(--f-display);font-weight:800;font-size:18px;padding:6px}
+.arow input[type=date]{width:150px}.arow input[type=time]{width:100px}
+@media (max-width:640px){.arow{grid-template-columns:1fr}.arow .fields{justify-content:flex-start}}
+.confirm{background:var(--panel2);border:1px solid var(--loss);padding:12px;border-radius:3px;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);background:var(--yellow);color:var(--ink);font-weight:700;padding:10px 18px;border-radius:3px;z-index:20}
+.note{color:var(--muted);font-size:13px;max-width:65ch}
+@media (max-width:520px){
+  .mrow{grid-template-columns:64px 1fr 52px 1fr;gap:6px;font-size:13px}
+  .crest{width:60px}
+}
+/* Month view */
+.seg{display:flex;border:1px solid var(--yellow);border-radius:3px;overflow:hidden}
+.seg button{font:800 14px/1 var(--f-display);letter-spacing:.08em;text-transform:uppercase;background:none;color:var(--yellow);border:0;padding:9px 14px;cursor:pointer}
+.seg button[aria-pressed="true"]{background:var(--yellow);color:var(--ink)}
+.mhead{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:12px}
+.mtitle{font-size:26px}
+.nav-m{font-size:24px;padding:6px 14px}
+.nav-m:disabled{opacity:.3;cursor:default}
+.mgrid{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:4px}
+.dow{text-align:center;font:700 13px/1 var(--f-display);letter-spacing:.1em;color:var(--muted);padding:6px 0}
+.day{min-height:96px;background:var(--panel);border:1px solid var(--line);border-radius:3px;padding:6px;text-align:left;cursor:pointer;color:var(--text);font:inherit;display:flex;flex-direction:column;align-items:stretch;gap:4px;min-width:0}
+.day.empty{background:none;border:0;cursor:default}
+.day .n{font:800 17px/1 var(--f-display);font-variant-numeric:tabular-nums;align-self:flex-start}
+.day.wknd .n{color:var(--muted)}
+.day.today .n{background:var(--text);color:var(--ink);border-radius:2px;padding:2px 4px}
+.day.brk-day{background:repeating-linear-gradient(-45deg,var(--panel) 0 6px,var(--panel2) 6px 12px)}
+.day.sel{outline:2px solid var(--yellow);outline-offset:-1px}
+.day.has-ours{border-color:var(--yellow-dim)}
+.chip{background:var(--yellow);color:var(--ink);border-radius:2px;padding:4px 5px;display:flex;flex-direction:column;gap:2px;font-size:12px;line-height:1.15;min-width:0}
+.chip .opp{font-weight:700;overflow-wrap:anywhere}
+.chip .ct{font:800 14px/1 var(--f-display);font-variant-numeric:tabular-nums;display:flex;gap:4px;align-items:center}
+.rs{font:700 10px/1 var(--f-body);padding:2px 3px;border-radius:2px;color:var(--ink)}
+.rs.W{background:var(--win)}.rs.L{background:var(--loss)}.rs.D{background:var(--draw)}
+.chip .rs{outline:1px solid var(--ink)}
+.dots{display:flex;flex-wrap:wrap;gap:3px;align-items:center;margin-top:auto}
+.dots i{width:6px;height:6px;border-radius:50%;background:var(--muted)}
+.dots em{font-style:normal;font-size:11px;color:var(--muted);margin-left:2px}
+.blab{font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--yellow-dim);margin-top:auto}
+.mlegend{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:12px;color:var(--muted);font-size:13px}
+.mlegend span{display:flex;align-items:center;gap:6px}
+.lg-chip{width:14px;height:10px;background:var(--yellow);border-radius:2px}
+.lg-dot{width:7px;height:7px;border-radius:50%;background:var(--muted)}
+.lg-brk{width:14px;height:10px;border:1px solid var(--line);background:repeating-linear-gradient(-45deg,var(--panel) 0 3px,var(--panel2) 3px 6px)}
+@media (max-width:640px){
+  .mgrid{gap:2px}
+  .day{min-height:68px;padding:3px;gap:3px}
+  .day .n{font-size:14px}
+  .chip{padding:2px 3px;font-size:9.5px}
+  .chip .ct{font-size:11px}
+  .dots em,.blab{display:none}
+  .dots i{width:5px;height:5px}
+  .day.brk-day .n{color:var(--yellow-dim)}
+}
+@media (prefers-reduced-motion:no-preference){.tab{animation:in .25s ease}}
+@keyframes in{from{transform:translateY(4px)}to{transform:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <svg class="crest" viewBox="0 0 100 120" aria-hidden="true">
+      <path d="M50 4 L94 18 V58 C94 88 72 106 50 116 C28 106 6 88 6 58 V18 Z" fill="#0c0c09"/>
+      <path d="M50 14 L84 25 V58 C84 81 67 96 50 104 C33 96 16 81 16 58 V25 Z" fill="#ffd200"/>
+      <path d="M16 46 H84 V62 H16 Z" fill="#0c0c09"/>
+      <text x="50" y="58.5" text-anchor="middle" font-family="Big Shoulders Display,Impact,sans-serif" font-weight="900" font-size="15" fill="#ffd200" letter-spacing="1">SLC</text>
+      <circle cx="50" cy="82" r="9" fill="none" stroke="#0c0c09" stroke-width="3"/>
+      <path d="M50 73 L50 91 M41 82 H59" stroke="#0c0c09" stroke-width="2"/>
+    </svg>
+    <div>
+      <h1>Sporting<br>La Caleta</h1>
+      <p>Liga Fútbol Sala Ciudad de Tomares · 3ª División · 2026/27</p>
+    </div>
+  </div>
+</header>
+
+<nav><div class="wrap" role="tablist">
+  <button role="tab" data-tab="inicio">Inicio</button>
+  <button role="tab" data-tab="calendario">Calendario</button>
+  <button role="tab" data-tab="clasificacion">Clasificación</button>
+  <button role="tab" data-tab="admin" class="lock">🔒 Privado</button>
+</div></nav>
+
+<main class="wrap" id="main"></main>
+
+<script>
+const US="SLC",REPO="sportinglacaleta/sportinglacaleta.github.io",DPATH="data/partidos.json",API="https://api.github.com/repos/"+REPO;
+let DATA=null,T={},STARTS=[],BREAK_R=[],MATCHES=[];
+function setData(d){DATA=d;T=d.equipos;STARTS=d.jornadas.map(x=>x.inicio);BREAK_R=d.descansos;MATCHES=d.partidos}
+const addDays=(iso,d)=>{const[y,m,dd]=iso.split("-").map(Number);return new Date(Date.UTC(y,m-1,dd+d)).toISOString().slice(0,10)};
+const M=()=>MATCHES;
+const played=m=>m.hg!==null&&m.hg!==""&&m.ag!==null&&m.ag!==""&&!m.post;
+const fmt=(iso,o={weekday:"short",day:"numeric",month:"short"})=>new Date(iso+"T12:00:00").toLocaleDateString("es-ES",o);
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const todayISO=()=>{const d=new Date();return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`};
+const BREAKS=()=>BREAK_R.map(b=>({after:STARTS.filter(s=>s<=b.from).length,t:`${fmt(b.from,{day:"numeric",month:"short"})} – ${fmt(b.to,{day:"numeric",month:"short"})} · ${b.t}`}));
+let authed=false, filterOurs=false, adminJ=null, saving=false, loginErr="";
+let token=null;try{token=localStorage.getItem("slc-token")}catch(e){}
+const hdr=(x={})=>Object.assign({Authorization:"Bearer "+token,"X-GitHub-Api-Version":"2022-11-28"},x);
+const b64=s=>{let bin="";new TextEncoder().encode(s).forEach(c=>bin+=String.fromCharCode(c));return btoa(bin)};
+async function load(fresh){
+  let d;
+  if(fresh&&token){const r=await fetch(API+"/contents/"+DPATH,{headers:hdr({Accept:"application/vnd.github.raw+json"}),cache:"no-store"});if(!r.ok)throw new Error("GitHub "+r.status);d=await r.json()}
+  else{const r=await fetch(DPATH+"?v="+Date.now(),{cache:"no-store"});if(!r.ok)throw new Error("HTTP "+r.status);d=await r.json()}
+  setData(d);
+}
+async function verify(){
+  const r=await fetch(API,{headers:hdr(),cache:"no-store"});
+  if(!r.ok)return false;const j=await r.json();return !!(j.permissions&&j.permissions.push);
+}
+async function saveData(msg){
+  const g=await fetch(API+"/contents/"+DPATH,{headers:hdr(),cache:"no-store"});
+  if(!g.ok)throw new Error("No se pudo leer el archivo ("+g.status+")");
+  const cur=await g.json();
+  const r=await fetch(API+"/contents/"+DPATH,{method:"PUT",headers:hdr({"Content-Type":"application/json"}),body:JSON.stringify({message:msg,content:b64(JSON.stringify(DATA,null,1)+"\n"),sha:cur.sha})});
+  if(!r.ok){let m=r.status;try{m=(await r.json()).message}catch(e){}throw new Error("GitHub rechazó el guardado: "+m)}
+}
+
+function row(m){
+  const ours=m.h===US||m.a===US;
+  const sc=m.post?`<div class="score pend"><span class="tag">Aplaz.</span></div>`:played(m)?`<div class="score">${m.hg}–${m.ag}</div>`:`<div class="score pend">${m.time}</div>`;
+  return `<div class="mrow${ours?" ours":""}">
+    <div class="when"><b>${fmt(m.date)}</b>${m.time} h</div>
+    <div class="h${m.h===US?" ours-name":""}">${esc(T[m.h])}</div>${sc}
+    <div class="a${m.a===US?" ours-name":""}">${esc(T[m.a])}</div></div>`;
+}
+function table(){
+  const S={};Object.keys(T).forEach(k=>S[k]={k,pj:0,g:0,e:0,p:0,gf:0,gc:0,pts:0,form:[]});
+  M().filter(played).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time)).forEach(m=>{
+    const h=S[m.h],a=S[m.a],hg=+m.hg,ag=+m.ag;
+    h.pj++;a.pj++;h.gf+=hg;h.gc+=ag;a.gf+=ag;a.gc+=hg;
+    if(hg>ag){h.g++;a.p++;h.pts+=3;h.form.push("W");a.form.push("L")}
+    else if(hg<ag){a.g++;h.p++;a.pts+=3;a.form.push("W");h.form.push("L")}
+    else{h.e++;a.e++;h.pts++;a.pts++;h.form.push("D");a.form.push("D")}
+  });
+  return Object.values(S).sort((x,y)=>y.pts-x.pts||(y.gf-y.gc)-(x.gf-x.gc)||y.gf-x.gf||T[x.k].localeCompare(T[y.k]));
+}
+function tableHTML(rows,compact){
+  return `<div class="tscroll"><table><thead><tr><th>#</th><th class="l">Equipo</th><th>PJ</th>${compact?"":"<th>G</th><th>E</th><th>P</th><th>GF</th><th>GC</th>"}<th>DG</th><th>Pts</th>${compact?"":"<th>Últimos 5</th>"}</tr></thead><tbody>${
+  rows.map((r,i)=>`<tr class="${r.k===US?"ours":""}"><td class="pos">${i+1}</td><td class="l">${esc(T[r.k])}</td><td>${r.pj}</td>${compact?"":`<td>${r.g}</td><td>${r.e}</td><td>${r.p}</td><td>${r.gf}</td><td>${r.gc}</td>`}<td>${r.gf-r.gc>0?"+":""}${r.gf-r.gc}</td><td class="pts">${r.pts}</td>${compact?"":`<td><div class="form">${r.form.slice(-5).map(f=>`<i class="${f}">${{W:"G",D:"E",L:"P"}[f]}</i>`).join("")||'<span class="label">—</span>'}</div></td>`}</tr>`).join("")}</tbody></table></div>`;
+}
+
+function renderInicio(){
+  const all=M(),ours=all.filter(m=>m.h===US||m.a===US).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));
+  const t=todayISO();
+  const next=ours.find(m=>!played(m)&&m.date>=t)||ours.find(m=>!played(m));
+  const last=ours.filter(played).slice(-3).reverse();
+  let nx="";
+  if(next){
+    const days=Math.round((new Date(next.date+"T12:00:00")-new Date(t+"T12:00:00"))/864e5);
+    nx=`<section class="next"><div class="label" style="text-align:center">Próximo partido · Jornada ${next.j}</div>
+      <div class="teams"><div class="tname${next.h===US?" ours-name":""}">${esc(T[next.h])}</div><div class="vs">VS</div><div class="tname${next.a===US?" ours-name":""}">${esc(T[next.a])}</div></div>
+      <div class="meta"><span>${fmt(next.date,{weekday:"long",day:"numeric",month:"long"})}</span><span>${next.time} h</span><span>${next.h===US?"Local":"Visitante"}</span></div>
+      <div><div class="count">${days<=0?"HOY":days}</div><div class="label" style="text-align:center">${days<=0?"":days===1?"día":"días"}</div></div></section>`;
+  }
+  const pos=table().findIndex(r=>r.k===US)+1;
+  return `<div class="tab">${nx}
+  <div class="grid2">
+    <div class="box"><div class="jhead"><h3>Nuestros partidos</h3><span style="display:flex;gap:10px;align-items:center"><span class="label">Puesto ${pos}º</span><button class="btn ghost" data-go="calendario" style="padding:8px 10px;font-size:13px">Ver mes</button></span></div>
+      ${last.length?last.map(row).join(""):`<p class="note">Aún no se ha jugado ningún partido. Los resultados aparecerán aquí en cuanto se suban desde el panel privado.</p>`}
+      ${ours.filter(m=>!played(m)).slice(next?1:0,3).map(row).join("")}
+    </div>
+    <div class="box"><div class="jhead"><h3>Clasificación</h3><button class="btn ghost" data-go="clasificacion" style="padding:8px 10px;font-size:13px">Ver completa</button></div>${tableHTML(table(),true)}</div>
+  </div></div>`;
+}
+const SHORT={CRA:"Cracks Minutti",QUI:"Quinta Fase",ROY:"Royal Academy",MAS:"Mashuca",SIT:"CD Sitivo",HAR:"Harta Fe",GAL:"Barrio Galaxy",NAS:"La Nasa",SLC:"La Caleta",VIV:"Vividores",BOM:"La Bomba",DIS:"Club Disney"};
+const MONTHS=["2026-10","2026-11","2026-12","2027-01","2027-02","2027-03","2027-04","2027-05"];
+let calView="mes",calMonth=null,selDay=null;
+const breakOn=iso=>BREAK_R.find(r=>iso>=r.from&&iso<=r.to);
+const ourNext=()=>{const t=todayISO();return M().filter(m=>(m.h===US||m.a===US)&&!played(m)).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time)).find(m=>m.date>=t)};
+function defaultDay(month){
+  const n=ourNext();if(n&&n.date.startsWith(month))return n.date;
+  const ds=M().filter(m=>m.date.startsWith(month)&&(!filterOurs||m.h===US||m.a===US)).map(m=>m.date).sort();
+  return ds[0]||null;
+}
+function calBar(){
+  return `<div class="toolbar"><h2 style="margin:0;margin-right:auto">Calendario</h2>
+    <div class="seg" role="group" aria-label="Vista"><button data-view="mes" aria-pressed="${calView==="mes"}">Mes</button><button data-view="lista" aria-pressed="${calView==="lista"}">Lista</button></div>
+    <label class="chk"><input type="checkbox" id="fOurs" ${filterOurs?"checked":""}> Solo Sporting La Caleta</label></div>`;
+}
+function renderCal(){return calView==="mes"?renderMonth():renderList()}
+function renderMonth(){
+  if(!calMonth){const n=ourNext();const t=todayISO().slice(0,7);calMonth=n?n.date.slice(0,7):(MONTHS.includes(t)?t:MONTHS[0])}
+  if(selDay===null||!selDay.startsWith(calMonth))selDay=defaultDay(calMonth);
+  const [y,mo]=calMonth.split("-").map(Number);
+  const lead=(new Date(Date.UTC(y,mo-1,1)).getUTCDay()+6)%7, dim=new Date(Date.UTC(y,mo,0)).getUTCDate();
+  const all=M(),t=todayISO(),idx=MONTHS.indexOf(calMonth);
+  const byDay={};all.forEach(m=>(byDay[m.date]=byDay[m.date]||[]).push(m));
+  const title=new Date(Date.UTC(y,mo-1,15)).toLocaleDateString("es-ES",{month:"long",year:"numeric",timeZone:"UTC"});
+  let cells="";
+  for(let i=0;i<lead;i++)cells+=`<div class="day empty" aria-hidden="true"></div>`;
+  for(let d=1;d<=dim;d++){
+    const iso=`${calMonth}-${String(d).padStart(2,"0")}`,ms=(byDay[iso]||[]).sort((a,b)=>a.time.localeCompare(b.time));
+    const ours=ms.find(m=>m.h===US||m.a===US),others=ms.filter(m=>m!==ours),br=breakOn(iso);
+    const dow=(lead+d-1)%7;
+    let inner=`<span class="n">${d}</span>`;
+    if(ours){
+      const opp=ours.h===US?ours.a:ours.h,home=ours.h===US;
+      let res=ours.post?"Aplazado":ours.time;
+      if(played(ours)){const us=home?+ours.hg:+ours.ag,th=home?+ours.ag:+ours.hg;res=`${ours.hg}–${ours.ag} <b class="rs ${us>th?"W":us<th?"L":"D"}">${us>th?"G":us<th?"P":"E"}</b>`}
+      inner+=`<span class="chip"><span class="opp">${home?"vs":"en"} ${esc(SHORT[opp])}</span><span class="ct">${res}</span></span>`;
+    }
+    if(others.length&&!filterOurs)inner+=`<span class="dots" title="${others.length} partidos más">${others.map(()=>"<i></i>").join("")}<em>${ours?"+":""}${others.length} partido${others.length>1?"s":""}</em></span>`;
+    if(br&&(d===1||iso===br.from||dow===0))inner+=`<span class="blab">${br.t}</span>`;
+    const cls=["day",dow>=5?"wknd":"",br?"brk-day":"",iso===t?"today":"",iso===selDay?"sel":"",ours?"has-ours":""].join(" ");
+    cells+=`<button class="${cls}" data-day="${iso}" aria-label="${fmt(iso,{weekday:"long",day:"numeric",month:"long"})}${ours?", juega Sporting La Caleta":""}${ms.length?`, ${ms.length} partidos`:""}">${inner}</button>`;
+  }
+  const tail=(7-(lead+dim)%7)%7;for(let i=0;i<tail;i++)cells+=`<div class="day empty" aria-hidden="true"></div>`;
+  let detail="";
+  if(selDay){
+    const ds=(byDay[selDay]||[]).filter(m=>!filterOurs||m.h===US||m.a===US).sort((a,b)=>a.time.localeCompare(b.time)),br=breakOn(selDay);
+    detail=`<section class="box" style="margin-top:16px"><div class="jhead"><h3>${fmt(selDay,{weekday:"long",day:"numeric",month:"long"})}</h3>${ds.length?`<span class="label">Jornada ${ds[0].j}</span>`:""}</div>
+      ${ds.length?ds.map(row).join(""):`<p class="note">${br?`Sin partidos: ${br.t.toLowerCase()==="recuperación"?"semana de recuperación y descanso":"descanso de "+br.t}.`:"No hay partidos este día."}</p>`}</section>`;
+  }
+  const monthOurs=all.filter(m=>m.date.startsWith(calMonth)&&(m.h===US||m.a===US)).length;
+  return `<div class="tab">${calBar()}
+    <div class="mhead"><button class="btn ghost nav-m" data-mon="-1" ${idx<=0?"disabled":""} aria-label="Mes anterior">‹</button>
+      <div style="text-align:center"><h3 class="mtitle">${title}</h3><span class="label">${monthOurs?`${monthOurs} partido${monthOurs>1?"s":""} de La Caleta`:"Sin partidos de La Caleta"}</span></div>
+      <button class="btn ghost nav-m" data-mon="1" ${idx>=MONTHS.length-1?"disabled":""} aria-label="Mes siguiente">›</button></div>
+    <div class="mgrid">${["L","M","X","J","V","S","D"].map(d=>`<div class="dow">${d}</div>`).join("")}${cells}</div>
+    <div class="mlegend"><span><i class="lg-chip"></i>Partido de La Caleta</span><span><i class="lg-dot"></i>Otros partidos</span><span><i class="lg-brk"></i>Descanso</span></div>
+    ${detail}</div>`;
+}
+function renderList(){
+  const all=M();let h=`<div class="tab">${calBar()}`;
+  for(let j=1;j<=22;j++){
+    let ms=all.filter(m=>m.j===j).sort((a,b)=>(a.date+a.time).localeCompare(b.date+b.time));
+    const done=ms.every(played);
+    if(filterOurs)ms=ms.filter(m=>m.h===US||m.a===US);
+    if(j===12)h+=`<h2 style="margin-top:28px">Segunda vuelta</h2>`;
+    h+=`<section class="jcard${done?" done":""}"><div class="jhead"><h3>Jornada ${j}</h3><span class="label">${fmt(STARTS[j-1],{day:"numeric",month:"short"})} – ${fmt(addDays(STARTS[j-1],3),{day:"numeric",month:"short",year:"numeric"})}</span></div>${ms.map(row).join("")}</section>`;
+    BREAKS().filter(b=>b.after===j).forEach(b=>h+=`<div class="brk">${b.t}</div>`);
+  }
+  return h+`<p class="note">Fechas según el calendario oficial del Ayuntamiento de Tomares. La organización puede modificarlas.</p></div>`;
+}
+function renderClas(){
+  return `<div class="tab"><h2>Clasificación</h2><div class="box">${tableHTML(table(),false)}</div>
+  <p class="legend">Victoria 3 pts · Empate 1 · Derrota 0. Desempate por diferencia de goles y goles a favor.</p></div>`;
+}
+function renderAdmin(){
+  if(!authed) return `<div class="tab"><h2>Zona privada</h2><form class="login" id="login">
+    <p class="note">Entra con tu clave de acceso de GitHub. Solo quien tenga permiso de escritura en el repositorio puede cambiar partidos y resultados.</p>
+    <label class="label" for="pw">Clave de acceso (token de GitHub)</label><input type="password" id="pw" autocomplete="current-password" value="${esc(token||"")}">
+    <label class="chk" style="font-size:14px"><input type="checkbox" id="remember" checked> Recordar en este dispositivo</label>
+    <button class="btn" ${saving?"disabled":""}>${saving?"Comprobando…":"Entrar"}</button><div class="err" ${loginErr?"":"hidden"}>${esc(loginErr)}</div></form></div>`;
+  const all=M();
+  if(adminJ===null){const p=all.find(m=>!played(m)&&!m.post);adminJ=p?p.j:22}
+  const ms=all.filter(m=>m.j===adminJ);
+  return `<div class="tab"><div class="toolbar"><h2 style="margin:0;margin-right:auto">Editar partidos</h2>
+    <select id="selJ" aria-label="Jornada">${STARTS.map((_,i)=>`<option value="${i+1}" ${i+1===adminJ?"selected":""}>Jornada ${i+1}</option>`).join("")}</select>
+    <button class="btn ghost" id="logout">Salir</button></div>
+  <form class="box" id="edit">${ms.map(m=>`<div class="arow"><div class="teams">${esc(T[m.h])} <span class="label">vs</span> ${esc(T[m.a])}</div>
+    <div class="fields"><input type="date" id="d-${m.id}" value="${m.date}" aria-label="Fecha"><input type="time" id="t-${m.id}" value="${m.time}" aria-label="Hora">
+    <input type="number" min="0" id="h-${m.id}" value="${m.hg??""}" placeholder="–" aria-label="Goles local"><input type="number" min="0" id="a-${m.id}" value="${m.ag??""}" placeholder="–" aria-label="Goles visitante">
+    <label class="chk" style="font-size:13px"><input type="checkbox" id="p-${m.id}" ${m.post?"checked":""}> Aplazado</label></div></div>`).join("")}
+    <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:14px;align-items:center"><button class="btn" ${saving?"disabled":""}>${saving?"Guardando…":"Guardar jornada "+adminJ}</button>
+    <span class="note">Deja los goles vacíos si el partido no se ha jugado. La web pública se actualiza 1–2 minutos después de guardar.</span></div></form></div>`;
+}
+const VIEWS={inicio:renderInicio,calendario:renderCal,clasificacion:renderClas,admin:renderAdmin};
+let tab="inicio";
+try{const h=location.hash.slice(1);if(VIEWS[h])tab=h}catch(e){}
+function render(){
+  document.querySelectorAll("nav button").forEach(b=>b.setAttribute("aria-selected",b.dataset.tab===tab));
+  document.getElementById("main").innerHTML=VIEWS[tab]();
+}
+function toast(t){const d=document.createElement("div");d.className="toast";d.textContent=t;document.body.appendChild(d);setTimeout(()=>d.remove(),3500)}
+document.addEventListener("click",e=>{
+  const b=e.target.closest("[data-tab],[data-go]");
+  if(b){tab=b.dataset.tab||b.dataset.go;render();window.scrollTo(0,0);return}
+  const v=e.target.closest("[data-view]");if(v){calView=v.dataset.view;render();return}
+  const mn=e.target.closest("[data-mon]");if(mn&&!mn.disabled){calMonth=MONTHS[MONTHS.indexOf(calMonth)+ +mn.dataset.mon];selDay=null;render();return}
+  const dy=e.target.closest("[data-day]");if(dy){selDay=dy.dataset.day;render();return}
+  if(e.target.id==="logout"){authed=false;token=null;try{localStorage.removeItem("slc-token")}catch(_){}render()}
+});
+document.addEventListener("change",e=>{
+  if(e.target.id==="fOurs"){filterOurs=e.target.checked;selDay=null;render()}
+  if(e.target.id==="selJ"){adminJ=+e.target.value;render()}
+});
+document.addEventListener("submit",async e=>{
+  e.preventDefault();
+  if(saving)return;
+  if(e.target.id==="login"){
+    token=document.getElementById("pw").value.trim();const rem=document.getElementById("remember").checked;
+    saving=true;loginErr="";render();
+    try{
+      if(!token||!(await verify()))throw new Error("La clave no es válida o no tiene permiso para escribir en el repositorio.");
+      await load(true);authed=true;
+      try{rem?localStorage.setItem("slc-token",token):localStorage.removeItem("slc-token")}catch(_){}
+    }catch(err){loginErr=err.message}
+    saving=false;render();
+  }
+  if(e.target.id==="edit"){
+    const ms=M().filter(m=>m.j===adminJ),prev=JSON.stringify(ms);
+    ms.forEach(m=>{
+      const v=k=>document.getElementById(`${k}-${m.id}`).value;
+      const hg=v("h"),ag=v("a");
+      Object.assign(m,{date:v("d")||m.date,time:v("t")||m.time,hg:hg===""?null:+hg,ag:ag===""?null:+ag,post:document.getElementById(`p-${m.id}`).checked});
+    });
+    saving=true;render();
+    try{await saveData(`Jornada ${adminJ}: actualizar partidos y resultados`);toast(`Jornada ${adminJ} guardada`)}
+    catch(err){JSON.parse(prev).forEach(o=>Object.assign(MATCHES.find(m=>m.id===o.id),o));toast(err.message)}
+    saving=false;render();
+  }
+});
+document.getElementById("main").innerHTML=`<p class="note">Cargando calendario…</p>`;
+load(false).then(render).catch(()=>{document.getElementById("main").innerHTML=`<p class="note">No se pudo cargar el calendario. Recarga la página en unos segundos.</p>`});
+</script>
+</body>
+</html>
